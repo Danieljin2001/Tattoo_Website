@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 //Post Schema
 const PostSchema = new mongoose.Schema({
@@ -25,10 +25,12 @@ const PostSchema = new mongoose.Schema({
     location: {
         type: String, //get from user table
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: new Date()
     }
+});
 
-},
-    {timestamps: true}
-);
-
-module.exports = mongoose.model("Post", PostSchema); //default export
+const Post = mongoose.model('Post', PostSchema); 
+export default Post; //exporting a mongoose model file
