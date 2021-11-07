@@ -13,7 +13,20 @@ const PostSchema = new mongoose.Schema({
     likes: {
         type: Array,
         default: []
+    },
+    desc: {
+        type: String,
+        max: 300
+    },
+    tags: {
+        type: Array,
+        max: 10
+    },
+    location: {
+        type: String, //get from user table
+        required: true
     }
+
 },
     {timestamps: true}
 );
