@@ -1,16 +1,20 @@
 import express from 'express'; //importing from express
-import { getUser } from '../controllers/users.js';
+import { getUser, updateUser, deleteUser, followUser } from '../controllers/users.js';
 
 const router = express.Router();//setting router instance
 
-router.get("/", (req,res) =>{
-    res.send("user router works!!!!!!!");
-});
+//get user
+router.get("/:id", getUser);
 
 //update user
+router.put("/:id", updateUser);
+
 //delete user
-//get user
+router.delete("/:id", deleteUser);
+
 //follow user
+router.put("/:id/follow", followUser);
+
 //unfollow user
 
 

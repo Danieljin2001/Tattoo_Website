@@ -6,6 +6,7 @@ import morgan from 'morgan';    //importing morgan (when a request is made to th
 
 //importing routers
 import userRoutes from "./routes/users.js";
+import authRoutes from "./routes/auth.js";
 
 
 const app =express();
@@ -35,3 +36,4 @@ app.use(morgan("common"));
 
 //routers
 app.use("/api/users", userRoutes); 
+app.use("/api/auth", authRoutes);
