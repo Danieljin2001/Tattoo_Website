@@ -1,5 +1,5 @@
 import express from 'express'; //importing from express
-import { getUser, updateUser, deleteUser, followUser } from '../controllers/users.js';
+import { getUser, updateUser, deleteUser, followUser, unfollowUser } from '../controllers/users.js';
 
 const router = express.Router();//setting router instance
 
@@ -16,6 +16,8 @@ router.delete("/:id", deleteUser);
 router.put("/:id/follow", followUser);
 
 //unfollow user
+router.put("/:id/unfollow", unfollowUser);
+
 
 
 
